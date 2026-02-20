@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-preanger-primary: #4A3728;
+  --color-preanger-secondary: #D4AF37;
+  --color-preanger-bg: #FFFDF9;
+  --color-preanger-text: #2D241E;
+
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-inter), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Efek tekstur kertas tua */
+.bg-parchment-texture {
+  background-color: #FFFDF9;
+  /* Warna dasar Cream White */
+  /* Pola noise halus (base64 SVG agar ringan) */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Efek bayangan tegas (Hard Shadow) ala cetakan lama */
+.shadow-vintage {
+  box-shadow: 8px 8px 0px 0px #4A3728;
+  /* Warna Coffee Brown */
+}
+
+.shadow-vintage-sm {
+  box-shadow: 4px 4px 0px 0px #4A3728;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-preanger-bg);
+  color: var(--color-preanger-text);
+  font-family: var(--font-sans);
 }
